@@ -7,49 +7,25 @@ public class EnterFolga : MonoBehaviour
     public GameObject PressClosed;
     public GameObject PressAnim;
     public GameObject PressOpen;
-  //  public GameObject LastFolga;
+    Animator anim;
 
-    float reloadTimer = 0.1f;
-    void Start()
-    {
-        
-    }
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.name == "FolgaThi001"){
+            anim = GetComponent<Animator>();
             Debug.Log("Enter folga");
             PressClosed.SetActive(false);
             // PressOpen.SetActive(false);
+            //PressAnim.SetActive(true);
             PressAnim.SetActive(true);
-
-            //reloadTimer -= Time.deltaTime;
-            //if (reloadTimer>0)
-            //{
-            //    Debug.Log(reloadTimer);
-            //}
-            
-           // if (reloadTimer <= 0)
-          //  {
-
-
-                Debug.Log("Plaied animation");
-                //PressAnim.SetActive(false);
-                //PressOpen.SetActive(true);
-                //Debug.Log("Model changed to open");
-
-
-
-          //  }
-
-
-                
-
-            
+            Debug.Log("Plaied animation");
+            StartCoroutine("OnDoneAnimation");
         }
     }
-
-
-    void Update()
-    {
+    IEnumerator OnDoneAnimation() {
+        yield return new WaitForSeconds(4);
+        PressAnim.SetActive(false);
+        PressOpen.SetActive(true);
+        Debug.Log("Model changed to open");
     }
 }
