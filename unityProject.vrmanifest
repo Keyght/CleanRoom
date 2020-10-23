@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.farmvrr2.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\mbaka\\Downloads\\FarmVRR2-9e426f94c444388e14f3fbe8cac1e949fa6b0627\\FarmVRR2-9e426f94c444388e14f3fbe8cac1e949fa6b0627\\actions.json",
+      "action_manifest_path": "C:\\Users\\mbaka\\FarmVRR2\\actions.json",
       "strings": {
         "en_us": {
           "name": "FarmVRR2 [Testing]"
