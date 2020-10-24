@@ -8,6 +8,9 @@ public class EnterFolga : MonoBehaviour
     public GameObject PressAnim;
     public GameObject PressOpen;
     public GameObject FolgaOld;
+    public GameObject FolgaNewOld;
+    public GameObject FolgaNewNew;
+    public GameObject TextFinish;
 
     Animator anim;
 
@@ -25,6 +28,9 @@ public class EnterFolga : MonoBehaviour
     }
     IEnumerator OnDoneAnimation() {
         yield return new WaitForSeconds(4);
+        FolgaNewOld.SetActive(false);
+        FolgaNewNew.SetActive(true);
+        TextFinish.SetActive(true);
         //PressAnim.SetActive(false);
         //PressOpen.SetActive(true);
         Debug.Log("Model changed to open");
